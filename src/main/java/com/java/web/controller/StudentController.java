@@ -19,7 +19,7 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 
-	@RequestMapping(value = "/student", method = RequestMethod.GET, headers = "Accept=application/json")
+	@RequestMapping(value = "/", method = RequestMethod.GET, headers = "Accept=application/json")
 	public ModelAndView getStudents(ModelAndView model) {
 		model.setViewName("students");
 		List<com.java.web.entities.Student> list =studentService.getAll();
@@ -28,10 +28,10 @@ public class StudentController {
 		return model;
 	}
 
-	@RequestMapping(value = "/addStudent", method = RequestMethod.GET)
+	@RequestMapping(value = "/addstudent", method = RequestMethod.GET)
 	public ModelAndView addStudent(ModelAndView model) {
-		model.setViewName("studentDetail");
-		model.addObject("student", new Student());
+		model.setViewName("addstudent");
+		model.addObject("students", new Student());
 		return model;
 	}
 
@@ -42,7 +42,7 @@ public class StudentController {
 		} else {
 			studentService.update(student);
 		}
-		return "redirect:/pages/student/";
+		return "redirect:/student";
 	}
 
 	@RequestMapping(value = "/getStudent", method = RequestMethod.GET)

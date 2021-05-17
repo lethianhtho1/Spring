@@ -66,7 +66,7 @@
 					</c:choose>
 					<tr>
 						<th colspan="5">
-							<button onclick="location.href='addStudent'"
+							<button onclick="location.href='addstudent'"
 								class="btn btn-primary">Add
 		
 								<%-- <spring:message code="student.btn.add" /> --%>
